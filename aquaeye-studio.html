@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aquaeye Studio</title>
     <style>
+        @media (max-width: 768px) {
+            .desktop { display: none; }
+        }
+        @media (min-width: 769px) {
+            .mobile { display: none; }
+        }
         :root {
             --blur: blur(2px);
             --bgcolor: rgba(0, 49, 88, 0.2);
@@ -25,7 +31,6 @@
             font-family: Arial;
             overflow-wrap: break-word;
             min-height: 100vh;
-            background-repeat: repeat;
             color: var(--textcolor);
         }
 
@@ -79,18 +84,37 @@
     <div class="topbar" style="text-align: center; justify-content: center; align-items: center;">
         <h2>Aquaeye Studio</h2>
     </div>
-    <div id="render" style="display: flex; justify-content: space-between;">
-        <div class="blur-board" style="width: 25%; display: block;">
-            <h3>Social media</h3>
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@aquaeye.studios" data-unique-id="aquaeye.studios" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;"> <section> <a target="_blank" href="https://www.tiktok.com/@aquaeye.studios?refer=creator_embed">@aquaeye.studios</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+    <div class="desktop">
+        <div id="render" style="display: flex; justify-content: space-between;">
+            <div class="blur-board" style="display: block; overflow-x: auto; width: 25%;">
+                <h3>Social media</h3>
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@aquaeye.studios" data-unique-id="aquaeye.studios" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;"> <section> <a target="_blank" href="https://www.tiktok.com/@aquaeye.studios?refer=creator_embed">@aquaeye.studios</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <div class="blur-board" style="display: block; width: 50%;">
+                <h3>About us</h3>
+                <p>We haven't thought about it yet.</p>
+            </div>
+            <div class="blur-board" style="display: block; width: 25%;">
+                <h3>Sneak peek</h3>
+                <p>Error.</p>
+            </div>
         </div>
-        <div class="blur-board" style=" width:50%; display: block;">
-            <h3>About us</h3>
-            <p>We haven't thought about it yet.</p>
-        </div>
-        <div class="blur-board" style="width: 25%; display: block;">
-            <h3>Sneak peek</h3>
-            <p>Error.</p>
+    </div>
+    <div class="mobile">
+        <div id="render">
+            <div class="blur-board" style="display: block;">
+                <h3>About us</h3>
+                <p>We haven't thought about it yet.</p>
+            </div>
+                <div class="blur-board" style="display: block;">
+                    <h3>Sneak peek</h3>
+                    <p>Error.</p>
+                </div>
+                <div class="blur-board" style="display: block; overflow-x: auto;">
+                    <h3>Social media</h3>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@aquaeye.studios" data-unique-id="aquaeye.studios" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;"> <section> <a target="_blank" href="https://www.tiktok.com/@aquaeye.studios?refer=creator_embed">@aquaeye.studios</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                </div>
+            </div>
         </div>
     </div>
     <div class="end" style="margin-top: 5px; display: flex; text-align: center; justify-content: center; font-family: monospace;">
