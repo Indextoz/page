@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquaeye Studio</title>
+    <style>
+        :root {
+            --blur: blur(2px);
+            --bgcolor: rgba(0, 49, 88, 0.2);
+            --sourcelnk: "https://raw.githubusercontent.com/indextoz/page/main/assets";
+            --textcolor: #fff;
+            --textactivecolor: #0ff;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #000;
+            background: url("https://raw.githubusercontent.com/indextoz/page/main/assets/aquaeye-studio/bg.gif") repeat;
+            background-size: 100vw 100vh;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-top: 75px;
+            font-family: Arial;
+            overflow-wrap: break-word;
+            min-height: 100vh;
+            background-repeat: repeat;
+            color: var(--textcolor);
+        }
+
+        .blur-board {
+            display: flex;
+            width: auto;
+            height: auto;
+            margin: 5px 10px;
+            padding: 10px;
+            overflow-wrap: break-word;
+            background: var(--bgcolor);
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            -webkit-backdrop-filter: var(--blur);
+            backdrop-filter: var(--blur);
+        }
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background: var(--bgcolor);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+            -webkit-backdrop-filter: var(--blur);
+            backdrop-filter: var(--blur);
+            z-index: 1000;
+        }
+        .topbar h3:active {
+            color: var(--textactivecolor);
+        }
+        .end {
+            flex: 1; 
+            margin-top: auto; 
+            padding: 15px;
+            background: var(--bgcolor);
+            -webkit-backdrop-filter: var(--blur);
+            backdrop-filter: var(--blur);
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.6);
+            text-align: left;
+        }
+        .glow:active {
+            text-shadow: 0 0 10px var(--textactivecolor);
+        }
+        .glow:hover {
+            text-shadow: 0 0 10px var(--textcolor);
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar" style="text-align: center; justify-content: center; align-items: center;">
+        <h2>Aquaeye Studio</h2>
+    </div>
+    <div id="render" style="display: flex; justify-content: space-between;">
+        <div class="blur-board" style="width: 25%; display: block;">
+            <h3>Social media</h3>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@aquaeye.studios" data-unique-id="aquaeye.studios" data-embed-from="embed_page" data-embed-type="creator" style="max-width:780px; min-width:288px;"> <section> <a target="_blank" href="https://www.tiktok.com/@aquaeye.studios?refer=creator_embed">@aquaeye.studios</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+        <div class="blur-board" style=" width:50%; display: block;">
+            <h3>About us</h3>
+            <p>We haven't thought about it yet.</p>
+        </div>
+        <div class="blur-board" style="width: 25%; display: block;">
+            <h3>Sneak peek</h3>
+            <p>Error.</p>
+        </div>
+    </div>
+    <div class="end" style="margin-top: 5px; display: flex; text-align: center; justify-content: center; font-family: monospace;">
+        <p style="margin: 0;"><a href="https://i2c.site" style="text-decoration: none; color: inherit; text-shadow: 0 0 10px #fff;">Hosted by Indextoz</a></p>
+        <p>EPCH1742086800000</p>
+    </div>
+</body>
+</html>
