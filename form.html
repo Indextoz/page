@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeklogDaemon</title>
+    <script>
+        let currentQuestion = 0;
+        let responses = [];
+        const questions = [
+            { text: "What is your name?", type: "text" },
+            { text: "What is your associated Discord username?", type: "text" },
+            { text: "What is your favorite stuff?", type: "text" },
+            { text: "What is your style?", type: "text" },
+            { text: "What is your prefered website theme?", type: "text" },
+            { text: "What is your favorite color?", type: "text" },
+            { text: "Anything else you want to say?", type: "text" }
+        ];
+        const descs = [
+            "You can use your nickname or actual name.",
+            "Your Discord username, we need this info to verify. It is required.",
+            "Each stuff needs to be seperated by a comma(,). It can be pretty much anything! Hobby, food, item, anything.",
+            "Maybe something that represents your style.",
+            "Like the era of the website and stuff. Modern? Oldschool? Futuristic?",
+            "Each color needs to be seperated by a comma(,). Hex code or RGB or just color name.",
+            "Extra details? Something?"
+        ];
+        const items = [
+            "name",
+            "discordusername",
+            "favorite",
+            "style",
+            "theme",
+            "color",
+            "optional"
+        ];
+
+        function startSurvey() {
+            document.getElementById("start-page").style.display = "none";
+            document.getElementById("survey-page").style.display = "block";
+            document.getElementById("answer").disabled = false;
+            document.getElementById("next-btn").disabled = false;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const questionData = questions[currentQuestion]; // Get question object
+                
+            document.getElementById("question").textContent = questionData.text; // Update question text
+            document.getElementById("desc").textContent = descs[currentQuestion]; // Update description
+                
+            let inputField = document.getElementById("answer");
+            inputField.type = questionData.type; // Dynamically change input type (e.g., "color" or "text")
+            inputField.value = ""; // Clear input field
+        }
+
+        function nextQuestion() {
+            let answer = document.getElementById("answer").value;
+            responses.push({ question: questions[currentQuestion], answer: answer });
+            
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                document.getElementById("survey-page").style.display = "none";
+                document.getElementById("thank-you-page").style.display = "block";
+                exportSurvey();
+            }
+        }
+
+        function exportSurvey() {
+            let data = responses.map((r, index) => `${items[index]}: ${r.answer}`).join("\n");
+            let blob = new Blob([data], { type: "text/plain" });
+            let a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "HTMLform.keklog";
+            a.click();
+        }
+
+        window.onload = function() {
+            document.querySelectorAll(".content").forEach(div => {
+                div.style.display = "block";
+            });
+        };
+    </script>
+    <style>
+        body {
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            color: #fff;
+            background-image: url('https://raw.githubusercontent.com/Indextoz/page/main/assets/html-form/bg.gif');
+        }
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+            -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+            z-index: 1000;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .end {
+            flex: 1; 
+            margin-top: auto; 
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.6);
+            text-align: left;
+        }
+        .content {
+            display: flex;
+            background: rgba(255, 255, 255, 0.2);
+            min-height: 400px;
+            word-wrap: break-word;
+            text-align: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            align-items: center;
+            padding: 2.5px;
+        }
+        .content2 {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.2);
+            min-height: 400px;
+            word-wrap: break-word;
+            text-align: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            padding: 2.5px;
+        }
+        button {
+            background: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin: 10px;
+            font-family: monospace;
+            color: #fff;
+        }
+        input {
+            background: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin: 10px;
+            font-family: monospace;
+            color: #fff;
+        }
+        input::placeholder {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <noscript>
+        <style>
+            .content { display: none; }
+            h1 { margin: 0; }
+            h3 { margin: 0; }
+            h4 { margin: 0; }
+            h5 { margin: 0; }
+            h6 { margin: 0; }
+        </style>
+        <div style="margin: 70px 10px 10px 10px;" class="content2">
+            <span style="font-size: 4rem; font-weight: 900;">Oof...</span>
+            <span style="font-size: 3rem;">This form NEED JavaScript...</span>
+            <span style="font-size: 2rem;">Without it, this form can't breathe...</span>
+            <span style="font-size: 1rem;">Plz enable JavaScript...</span>
+            <span style="font-size: 0.75rem;">Ahh... life...</span>
+            <span style="font-size: 0.5rem;">So... curel...</span>
+            <span style="font-size: 0.25rem;">*ded form cuz lack of JS air*</span>
+        </div>
+    </noscript>
+    <div class="topbar" style="text-align: center; justify-content: center; align-items: center;">
+        <span><h2><a href="https://sakamoto9016.github.io/I2cShowcase/" style="text-decoration: none; color: inherit; cursor: auto;">Indextoz Interactive Corporation™</a></h2></span>
+    </div>
+    <div class="content" style="margin: 70px 10px 10px 10px; min-height: 0;">
+        <iframe width="90%" height="auto" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1094536498&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/lhklhklhk" title="lhk" target="_blank" style="color: #cccccc; text-decoration: none;">lhk</a> · <a href="https://soundcloud.com/lhklhklhk/nightmare-technician" title="NIGHTMARE TECHNICIAN" target="_blank" style="color: #cccccc; text-decoration: none;">NIGHTMARE TECHNICIAN</a></div>
+    </div>
+    <div style="margin: 0px 10px 10px 10px; align-items: center; justify-content: center; text-align: center;" class="content">
+        <div id="start-page" style="min-height: auto;">
+            <h2>Welcome to the form!</h2>
+<pre style="margin:20px; white-space: pre-wrap;">
+Notice: This form is intended only for individuals personally invited by Winston or Andrew. If you were not given this form by them, please close this website.
+
+This form is designed to understand your favorite themes, interests, and personal preferences. Based on your responses, we may create a custom HTML project tailored just for you—completely free! Since this is a one-time creation, please provide detailed and honest answers to ensure the final result truly reflects your vision.
+</pre>
+            <span onclick="document.getElementById('bg-music').play()"><button style="width: 75%;" onclick="startSurvey()">Start!</button></span>
+        </div>
+
+        <div id="survey-page" style="display: none;">
+            <h2 id="question"></h2>
+            <input type="text" id="answer" placeholder="Your answer here..." style="width: 40%;">
+            <button id="next-btn" onclick="nextQuestion()" style="width: 100px;">Next</button>
+            <p id="desc"></p>
+        </div>
+
+        <div id="thank-you-page" style="display: none;">
+            <h2>Thank you for completing the form!</h2>
+            <p>You will get your KEKLOG file shortly...</p>
+            <p>Didn't see your KEKLOG file? Download again <a onclick="exportSurvey()" style="cursor: pointer; color: #0ff;">here</a>.</p>
+            <p>If you want to support us, please support us <a href="https://paypal.me/andrewdexinoz?country.x=VN&locale.x=en_US" style="cursor: pointer; color: #0ff;">here</a>.</p>
+            <h3>Send your KEKLOG file back to whoever send you this.</h3>
+        </div>
+    </div>
+
+    <div class="end" style="margin-top: 5px; display: flex; text-align: center; justify-content: center; font-family: monospace;">
+        <p style="margin: 0;"><a href="https://i2c.site" style="text-decoration: none; color: inherit; text-shadow: 0 0 10px #fff;">Hosted by Indextoz</a></p>
+        <p>EPCH1742941366000</p>
+    </div>
+</body>
+</html>
