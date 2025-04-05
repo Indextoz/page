@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saffy's info site</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            color: #fff;
+            word-wrap: break-word;
+        }
+        body {
+            background: #800000;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+        div { word-wrap: break-word; }
+        .acti {
+            margin-top: 20px;
+            display: none;
+            background: rgb(204, 48, 0);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        h1 { margin: 0 0 0 0; }
+        h2 { margin: 10px 0 10px 0;}
+        @media (min-width: 640px) { .acti { min-width: 640px; } }
+        @media (max-width: 639px) { .acti { width: calc(100vw - 40px); } }
+    </style>
+</head>
+<body>
+    <script>document.addEventListener("DOMContentLoaded", function () {document.querySelector('.acti').style.display = "flex";});</script>
+    <noscript>Enable JavaScript please, vroooo...</noscript>
+    <div class="acti" style="flex-direction: column;">
+        <div style="display: flex; flex-direction: column; margin: 20px;">
+            <h1>Saffiel Saffy</h1>
+            <h2>My information</h2>
+            <div style="display: flex; flex-direction: row;">
+                <div style="background-color: rgba(0, 0, 0, 0.1); display: flex; width: 100%; height: 240px;">
+                    <img src="https://raw.githubusercontent.com/Indextoz/page/main/Saffy/saf.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <span style="font-size: 0.5rem;">(this is me)</span>
+            <ul>
+                <li>My name is <b>Saffiel</b>, you can call me <b>Saffy</b> or <b>Pyra</b> for short.</li>
+                <li>My birthday is on <b>April 11th</b> every year.</li>
+                <li>I'm currently <b><span id="age-span">[$AGE]</span> years old</b>!</li>
+                <li>I'm from <b>Philippines</b>!</li>
+                <li>I do speak <b>English</b> and <b>Tagalog</b>!</li>
+                <li>Direct messaging status <b>depend</b> on my <b>mood</b>.</li>
+                <li>
+                    I like...
+                    <ol>
+                        <li>Spending time with both physical and online friends</li>
+                        <li>Outdoor activities</li>
+                        <li>Fashion</li>
+                        <li>Games</li>
+                        <li>Listen to music</li>
+                        <li><b>Literally anything!</b></li>
+                    </ol>
+                </li>
+                <li>
+                    I hate...
+                    <ol>
+                        <li>Politics</li>
+                        <li>Anything that against equalism for everyone
+                            <ul>
+                                <li>Racism</li>
+                                <li>Sexism</li>
+                                <li>Homophobism</li>
+                                <li>Transphobes</li>
+                                <li><b>etc.</b></li>
+                            </ul>
+                            <b style="text-decoration: underline;">Do not interact with me if you're any of the above.</b>
+                        </li>
+                    </ol>
+                </li>
+                <li>My fav colors is <span style="background-color: #fff; color: #800000;">red</span>!</li>
+            </ul>
+            <h2>My artwork</h2>
+            <div style="display: flex; width: 100%; height: 200px; margin-bottom: 10px;">
+                <div style="display: flex; background: rgba(0, 0, 0, 0.2); width: 40%; height: 200px; margin-right: 10px; overflow: hidden;">
+                    <img src="https://raw.githubusercontent.com/Indextoz/page/main/Saffy/a1.png" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+                <div style="display: flex; background: rgba(0, 0, 0, 0.2); width: 60%; height: 200px; overflow: hidden;">
+                    <img src="https://raw.githubusercontent.com/Indextoz/page/main/Saffy/a2.png" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+            </div>
+            <div style="display: flex; width: 100%; height: 200px;">
+                <div style="display: flex; background: rgba(0, 0, 0, 0.2); width: 60%; height: 200px; margin-right: 10px; overflow: hidden;">
+                    <img src="https://raw.githubusercontent.com/Indextoz/page/main/Saffy/b1.png" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+                <div style="display: flex; background: rgba(0, 0, 0, 0.2); width: 40%; height: 200px; overflow: hidden;">
+                    <img src="https://raw.githubusercontent.com/Indextoz/page/main/Saffy/b2.png" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+            </div>
+            <span style="font-size: 0.25rem; color: rgba(255, 255, 255, 0);">(Andrew is gay)</span>
+        </div>
+        <hr style="width: calc(100% - 20px);">
+        <div style="font-family: monospace; display: flex; flex-direction: column; text-align: center;">
+        <span style="text-shadow: 0 0 10px #fff;"><a href="https://indextoz.github.io/page" target="_blank" style="text-decoration: none; color: #fff;">Hosted by Indextoz</a></span>
+        <span>ID00000003</span>
+        </div>
+    </div>
+    <script>
+        // Function to calculate the age
+        function calculateAge(birthdate) {
+            const birthDate = new Date(birthdate);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const month = today.getMonth();
+            const day = today.getDate();
+
+            // Adjust the age if the birthday hasn't occurred yet this year
+            if (month < birthDate.getMonth() || (month === birthDate.getMonth() && day < birthDate.getDate())) {
+                age--;
+            }
+
+            return age;
+        }
+
+        // Function to replace the age placeholder
+        function replaceAgePlaceholder() {
+            const birthdate = "2009-04-11"; // Example birthdate (YYYY-MM-DD)
+            const age = calculateAge(birthdate);
+            
+            // Replace the placeholder with the calculated age
+            const ageSpan = document.getElementById("age-span");
+            ageSpan.textContent = age;
+        }
+
+        // Call the function to replace the age on page load
+        window.onload = replaceAgePlaceholder;
+    </script>
+</body>
+</html>
