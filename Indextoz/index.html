@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indextoz's Site</title>
+    <style>
+        html {
+            background: linear-gradient(180deg, #9966ff, #66ebff);
+        }
+        body {
+            background: linear-gradient(180deg, #9966ff, #66ebff);
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            min-width: 540px;
+        }
+        .desktop {
+            display: flex;
+        }
+        .mobile {
+            display: flex;
+        }
+        @media (max-width: 600px) { .desktop { display: none; } }
+        @media (min-width: 599px) { .mobile { display: none; } }
+        .box {
+            width: calc(100% - 120px);
+            height: calc(100% - 120px);
+        }
+        .but {
+            background: #f00;
+            width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            height: 36px;
+        }
+        .but:hover {
+            padding-top: 10px;
+            height: 26px;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div style="display: flex; justify-content: space-between;">
+            <span style="font-size: 1.5rem; color: #fff;">Indextoz's site</span>
+            <div style="display: flex;">
+                <a href="https://github.com/Indextoz" target="_blank"><div class="but" style="background: #cccccc; color: #000;">Github</div></a>
+                <a href="https://www.tiktok.com/@indextoz" target="_blank"><div class="but" style="background: #000000; color: #fff">Tiktok</div></a>
+                <a href="https://discord.com/invite/xTxSvABP26" target="_blank"><div class="but" style="background: #454fbf; color: #fff">Discord</div></a>
+            </div>
+        </div>
+        <div style="background: #ff0; width: 100%; height: calc(100% - 36px); display: flex;">
+            <div class="desktop" style="overflow-y: hidden; background: linear-gradient(180deg, #66ff7e, #fff866); width: calc(100% / 3); height: 100%; align-items: flex-end;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 92.839 65">
+                    <g stroke-miterlimit="10">
+                      <path d="M26.42 25v-5h40v5z" fill="#5f94b8"/>
+                      <path d="M36.42 22.5v-20h20v20z" fill="#f1c50e"/>
+                      <path d="M36.42 22.5c0-1.38 4.477-2.5 10-2.5s10 1.12 10 2.5-4.477 2.5-10 2.5-10-1.12-10-2.5" fill="#f1c50e"/>
+                      <path d="M36.42 2.5c0-1.38 4.477-2.5 10-2.5s10 1.12 10 2.5-4.477 2.5-10 2.5-10-1.12-10-2.5" fill="#f2d357"/>
+                      <path d="M26.42 65V25h40v40z" fill="#297fb8"/>
+                      <path d="m6.474 21.69.81-4.934 19.736 3.237-.81 4.934z" fill="#e8a099"/>
+                      <path d="M0 61.163 6.474 21.69l19.737 3.237L19.737 64.4z" fill="#e84c3d"/>
+                      <path d="M39.67 15.375c0-1.166 3.022-2.112 6.75-2.112s6.75.946 6.75 2.112-3.022 2.112-6.75 2.112-6.75-.946-6.75-2.112" fill-opacity=".4" fill="#8c45ad"/>
+                      <path d="M39.67 12.5c0-1.588 1.007-2.875 2.25-2.875s2.25 1.287 2.25 2.875-1.007 2.875-2.25 2.875-2.25-1.287-2.25-2.875zm9 0c0-1.588 1.007-2.875 2.25-2.875s2.25 1.287 2.25 2.875-1.007 2.875-2.25 2.875-2.25-1.287-2.25-2.875z" fill="#fff" stroke="#000"/>
+                      <path d="m66.63 24.927-.81-4.934 19.736-3.237.81 4.934z" fill="#e8a099"/>
+                      <path d="m73.103 64.4-6.474-39.473 19.737-3.237 6.474 39.473z" fill="#e84c3d"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="desktop" style="overflow-y: auto; flex-direction: column; background: #fff; width: calc((100% - 20px) / 3 * 2); height: calc(100% - 20px); padding: 10px;">
+                <span style="font-size: 2.5rem;">Welcome!</span>
+                <span style="font-size: 1.5rem;">About me</span>
+                <span style="font-size: 1rem;">Hi, my name is Indextoz Dexinoz! You can visit my Github, Tiktok or Discord if you want. I made this page for demo purpose only! I like any kind of colours! If you want to, you can request <b>Indextoz Corporation™</b> to make one for you!</span>
+            </div>
+            <div class="mobile" style="overflow-y: auto; flex-direction: column; background: #fff; width: 100%; height: calc(100% - 20px); padding: 10px;">
+                <span style="font-size: 2.5rem;">Welcome!</span>
+                <span style="font-size: 1.5rem;">About me</span>
+                <span style="font-size: 1rem;">Hi, my name is Indextoz Dexinoz! You can visit my Github, Tiktok or Discord if you want. I made this page for demo purpose only! I like any kind of colours! If you want to, you can request <b>Indextoz Corporation™</b> to make one for you!</span>
+            </div>
+        </div>
+        <div style="display: flex; align-items: baseline; font-family: monospace; background: #000; width: fit-content; color: #fff;">
+            <a href="https://indextoz.github.com/page" style="color: #fff; text-decoration: none; text-shadow: 0 0 10px #fff;">Hosted by Indextoz</a>
+            <pre style="margin: 0; padding: 0;"> | IDX0000000</pre>
+        </div>
+</div>
+</body>
+</html>
